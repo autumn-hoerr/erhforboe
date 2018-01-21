@@ -1,0 +1,36 @@
+.c-header
+  position: fixed
+  top: 0
+  z-index: 3
+  border-top: 5px solid #2DA7DF
+  background: #fff
+  width: 100%
+  height: 60px
+  border-bottom: 1px solid #1f2326
+  box-shadow: 0 3px 15px 0 rgba(0, 0, 0, 0.05)
+  .c-social-links
+    margin-left: 15px
+
+@media (max-width: 650px)
+  .c-header .navigation
+    display: none
+
+@media (max-width: 650px)
+  .c-header.nav-open .navigation
+    display: block
+
+@media (min-width: 650px)
+  .c-header .c-social-links
+    float: right
+    margin-left: 0
+
+.c-main-nav__link--home
+  float: left
+  padding: 0 15px 0 0
+  border-bottom: 0
+  &.active
+    background: none
+  img
+    width: 150px
+    height: 54px
+ 

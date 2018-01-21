@@ -1,0 +1,429 @@
+@import "../sass/config"
+@import "../sass/helpers"
+@import "../sass/layout"
+@import "../sass/reset"
+@import "../sass/type"
+
+
+
+
+.navigation
+  background: #eee
+  box-shadow: inset 7px 0 9px -7px rgba(0, 0, 0, 0.4)
+  width: 200px
+  height: 100%
+  position: fixed
+  top: 60px
+  bottom: 0
+  right: 0
+  z-index: -1
+
+@media (min-width: 650px)
+  .navigation
+    position: static
+    height: auto
+    width: auto
+    box-shadow: none
+
+.hamburger
+  .line
+    width: 30px
+    height: 4px
+    background-color: #1f2326
+    display: block
+    margin: 4px auto
+    -webkit-transition: all 0.3s ease-in-out
+    -o-transition: all 0.3s ease-in-out
+    transition: all 0.3s ease-in-out
+  &:hover
+    cursor: pointer
+
+#hamburger-9
+  position: fixed
+  top: 18px
+  right: 15px
+  z-index: 2
+  width: 30px
+  height: 30px
+  cursor: pointer
+  transition: all 0.3s ease-in-out
+  &.is-active
+    transform: rotate(45deg)
+  &:before
+    content: ""
+    position: absolute
+    width: 40px
+    height: 40px
+    border: 3px solid transparent
+    top: calc(50% - 20px)
+    left: calc(50% - 20px)
+    border-radius: 100%
+    transition: all 0.3s ease-in-out
+  &.is-active
+    &:before
+      border: 3px solid #1f2326
+    .line
+      width: 25px
+      &:nth-child(2)
+        opacity: 0
+      &:nth-child(1)
+        transform: translateY(9px)
+      &:nth-child(3)
+        transform: translateY(-7px) rotate(90deg)
+
+
+
+.c-main-nav__link, .c-main-nav__link--home, .c-main-nav__link--donate
+  display: block
+  color: #1f2326
+  font-family: "Montserrat", sans-serif
+  text-transform: uppercase
+  font-size: 16px
+  opacity: 1
+  will-change: opacity
+  transition: opacity 250ms linear
+  padding: 15px
+  border-bottom: 1px solid #1f2326
+
+@media (min-width: 650px)
+  .c-main-nav__link, .c-main-nav__link--home, .c-main-nav__link--donate
+    color: #1f2326
+    float: left
+    border-right: 1px solid #ddd
+    border-bottom: 0
+    height: 54px
+    line-height: 54px
+    padding: 0 15px
+
+.c-main-nav__link:hover, .c-main-nav__link--home:hover, .c-main-nav__link--donate:hover
+  opacity: .65
+
+.c-main-nav__link.is-active
+  color: #EE4D9B
+
+.is-active
+  &.c-main-nav__link--home, &.c-main-nav__link--donate
+    color: #EE4D9B
+
+@media (min-width: 650px)
+  .c-main-nav__link.is-active
+    color: #1f2326
+    background: #eee
+    transition: none
+  .is-active
+    &.c-main-nav__link--home, &.c-main-nav__link--donate
+      color: #1f2326
+      background: #eee
+      transition: none
+
+.c-main-nav__link.is-active:hover
+  opacity: 1
+
+.is-active
+  &.c-main-nav__link--home:hover, &.c-main-nav__link--donate:hover
+    opacity: 1
+
+.c-main-nav__link--home
+  float: left
+  padding: 0 15px 0 0
+  border-bottom: 0
+  &.is-active
+    background: none
+  svg
+    width: 150px
+    height: 54px
+
+.c-main-nav__link--donate
+  background-color: #EE4D9B
+  color: white
+
+.c-social-links
+  margin: 0
+  padding: 0
+  list-style: none
+
+.c-social-links__intro
+  color: #414447
+  text-transform: uppercase
+  font-size: 16px
+  padding: 0 15px
+
+.c-social-links__item
+  display: block
+  float: left
+  height: 54px
+  line-height: 54px
+  opacity: 0.65
+  will-change: opacity
+  transition: opacity 250ms linear
+  &:first-of-type
+    margin-right: 5px
+  a
+    display: inline-block
+    height: inherit
+  svg
+    width: 32px
+    height: 54px
+    fill: black
+  &:hover
+    opacity: 1
+  &--small
+    svg
+      width: 20px
+
+.c-hero, .c-hero--patternBg
+  border-bottom: 1px solid #1f2326
+
+.c-hero img, .c-hero--patternBg img
+  display: block
+  width: 100%
+
+.c-hero .l-container, .c-hero--patternBg .l-container
+  padding: 0
+
+@media (min-width: 1074px)
+  .c-hero .l-container, .c-hero--patternBg .l-container
+    padding: 0 25px
+
+.c-hero .c-hero-photo-credit a
+  color: white
+  font-size: 10px
+  position: absolute
+  bottom: 5px
+  right: 40px
+
+.c-hero--patternBg
+  .c-hero-photo-credit a
+    color: white
+    font-size: 10px
+    position: absolute
+    bottom: 5px
+    right: 40px
+  background-color: #ece6e9
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ee88b9' fill-opacity='0.29'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")
+
+.c-why
+  margin: 60px 0
+  &:after
+    content: ""
+    display: table
+    clear: both
+
+.c-why__img
+  width: 100%
+
+@media (min-width: 640px)
+  .c-why__img
+    width: 33%
+    float: right
+
+.c-why__quote p
+  margin: 0
+
+@media (min-width: 640px)
+  .c-why__quote
+    float: left
+    width: 60%
+    margin-right: 3%
+
+.c-why__cite
+  font-family: "Montserrat", sans-serif
+  text-transform: uppercase
+  font-size: 14px
+  float: right
+  color: #EE4D9B
+  margin: 1em 0 2em
+
+.c-subscribe
+  padding: 20px 0
+  background: #b6e0f4
+  .c-simple-form
+    text-align: center
+
+@media (min-width: 575px)
+  .c-subscribe .c-simple-form
+    text-align: left
+
+.c-subscribe__headline
+  font-family: "Montserrat", sans-serif
+  text-transform: uppercase
+  font-size: 24px
+  width: 100%
+  text-align: center
+  padding-top: 3px
+  line-height: 1.25
+  display: inline-block
+  margin-bottom: .75em
+
+@media (min-width: 575px)
+  .c-subscribe__headline
+    width: auto
+    text-align: left
+    float: left
+    margin-right: 35px
+    margin-bottom: 0
+
+input[type='email']
+  display: inline-block
+  width: auto
+  vertical-align: middle
+  padding: .5rem .75rem
+  font-size: 1rem
+  line-height: 1.25
+  color: #464a4c
+  background-color: #fff
+  background-image: none
+  -webkit-background-clip: padding-box
+  background-clip: padding-box
+  border: 1px solid rgba(0, 0, 0, 0.15)
+  -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s
+  transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s
+  -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s,-webkit-box-shadow ease-in-out .15s
+
+button[type='submit']
+  position: relative
+  left: -1px
+  display: inline-block
+  font-weight: 400
+  line-height: 1.25
+  text-align: center
+  white-space: nowrap
+  vertical-align: middle
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+  border: 1px solid transparent
+  padding: .5rem 1rem
+  font-size: 1rem
+  -webkit-transition: all .2s ease-in-out
+  -o-transition: all .2s ease-in-out
+  transition: all .2s ease-in-out
+
+.c-about-intro
+  margin: 2em 0 3em
+  &:after
+    content: ""
+    display: table
+    clear: both
+  img
+    width: 100%
+
+@media (min-width: 575px)
+  .c-about-intro__img
+    float: left
+    width: 33%
+
+@media (min-width: 575px)
+  .c-about-intro__text
+    float: left
+    width: 66%
+    padding-left: 1em
+    h2
+      margin-top: 0
+
+.c-about-facts
+  padding-bottom: 4em
+  .l-container
+    max-width: 800px
+  h2
+    padding-bottom: 0.5em
+    background: white
+
+@media (min-width: 575px)
+  .c-about-facts h2
+    text-align: center
+    border: 2px solid #2DA7DF
+    border-top: none
+    position: relative
+    &:before
+      content: ""
+      background-color: white
+      width: 3px
+      height: 30px
+      position: absolute
+      left: -2px
+    &:after
+      content: ""
+      background-color: white
+      width: 3px
+      height: 30px
+      position: absolute
+      left: -2px
+      left: auto
+      right: -2px
+
+@media (min-width: 575px)
+  .c-about-facts
+    background: linear-gradient(90deg, #2DA7DF 2px, white 1px)
+    background-position: 100% 0
+    background-size: 50%
+    background-repeat: repeat-y
+
+.c-about__event:after
+  content: ""
+  display: table
+  clear: both
+
+@media (min-width: 575px)
+  .c-about__event
+    display: flex
+    flex-direction: row
+    flex-wrap: nowrap
+    margin: 2em 0
+    position: relative
+    &:before
+      content: ""
+      position: absolute
+      top: -6px
+      left: 50%
+      width: 12px
+      height: 12px
+      border-radius: 50%
+      border: 2px solid #2DA7DF
+      margin-left: -6px
+      background-color: #2DA7DF
+      z-index: 2
+    &:nth-child(odd)
+      .c-about-event__img, .c-about-event__img--square
+        order: 2
+        left: 2px
+      .c-about-event__desc
+        order: 1
+        padding: 0 1em 0 0
+
+.c-about-event__img img, .c-about-event__img--square img
+  max-width: 100%
+
+.c-about-event__img, .c-about-event__img--square
+  width: 100%
+  display: block
+
+@media (min-width: 575px)
+  .c-about-event__img, .c-about-event__img--square
+    position: relative
+    float: left
+    width: 50%
+    text-align: right
+
+@media (min-width: 575px)
+  .c-about-event__img--square
+    max-height: 375px
+
+.c-about-event__desc
+  margin: 1em 0
+
+@media (min-width: 575px)
+  .c-about-event__desc
+    float: left
+    width: 50%
+    margin: 0
+    padding: 0 0 0 1em
+
+.c-placeholder
+  display: block
+  background: red
+  width: 100%
+  height: 400px

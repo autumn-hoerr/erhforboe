@@ -1,0 +1,46 @@
+.l-page-container
+  min-height: 100%
+  padding-top: 60px
+
+.l-content-container
+  min-width: 100%
+  min-height: calc(100vh - 60px)
+  display: grid
+  grid-template-rows: 1fr auto
+  background-color: #fff
+  position: relative
+  z-index: 2
+  transform: translateX(0)
+  transition: transform .2s ease-in-out
+  &.is-open
+    transform: translateX(-200px)
+
+main
+  grid-row-start: 1
+  /* autoprefixer: off */
+  grid-row-end: 2
+  /* autoprefixer: off */
+
+.c-footer
+  grid-row-start: 2
+  /* autoprefixer: off */
+  grid-row-end: 3
+  /* autoprefixer: off */
+
+.l-container
+  max-width: 1074px
+  padding: 0 10px
+  margin: 0 auto
+  position: relative
+  &:after
+    content: ""
+    display: table
+    clear: both
+
+.l-container--small
+  @extend .l-container
+  max-width: 800px
+
+@media (min-width: 600px)
+  .l-container
+    padding: 0 25px
