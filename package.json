@@ -7,10 +7,12 @@
     "gatsby": "^1.9.158",
     "gatsby-image": "^1.0.34",
     "gatsby-link": "^1.6.34",
+    "gatsby-plugin-google-analytics": "^1.0.15",
     "gatsby-plugin-postcss-sass": "^1.0.15",
     "gatsby-plugin-react-helmet": "^2.0.3",
     "gatsby-plugin-sharp": "^1.6.25",
     "gatsby-source-filesystem": "^1.5.14",
+    "gatsby-transformer-remark": "^1.7.28",
     "gatsby-transformer-sharp": "^1.6.16",
     "react-helmet": "^5.2.0",
     "react-mailchimp-subscribe": "^1.0.3"

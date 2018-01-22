@@ -33,4 +33,133 @@
   img
     width: 150px
     height: 54px
- 
+
+.navigation
+  background: #eee
+  box-shadow: inset 7px 0 9px -7px rgba(0, 0, 0, 0.4)
+  width: 200px
+  height: 100%
+  position: fixed
+  top: 60px
+  bottom: 0
+  right: 0
+  z-index: -1
+
+@media (min-width: 650px)
+  .navigation
+    position: static
+    height: auto
+    width: auto
+    box-shadow: none
+
+.hamburger
+  .line
+    width: 30px
+    height: 4px
+    background-color: #1f2326
+    display: block
+    margin: 4px auto
+    -webkit-transition: all 0.3s ease-in-out
+    -o-transition: all 0.3s ease-in-out
+    transition: all 0.3s ease-in-out
+  &:hover
+    cursor: pointer
+
+#hamburger-9
+  position: fixed
+  top: 18px
+  right: 15px
+  z-index: 2
+  width: 30px
+  height: 30px
+  cursor: pointer
+  transition: all 0.3s ease-in-out
+  &.is-active
+    transform: rotate(45deg)
+  &:before
+    content: ""
+    position: absolute
+    width: 40px
+    height: 40px
+    border: 3px solid transparent
+    top: calc(50% - 20px)
+    left: calc(50% - 20px)
+    border-radius: 100%
+    transition: all 0.3s ease-in-out
+  &.is-active
+    &:before
+      border: 3px solid #1f2326
+    .line
+      width: 25px
+      &:nth-child(2)
+        opacity: 0
+      &:nth-child(1)
+        transform: translateY(9px)
+      &:nth-child(3)
+        transform: translateY(-7px) rotate(90deg)
+
+
+
+.c-main-nav__link, .c-main-nav__link--home, .c-main-nav__link--donate
+  display: block
+  color: #1f2326
+  font-family: "Montserrat", sans-serif
+  text-transform: uppercase
+  font-size: 16px
+  opacity: 1
+  will-change: opacity
+  transition: opacity 250ms linear
+  padding: 15px
+  border-bottom: 1px solid #1f2326
+
+@media (min-width: 650px)
+  .c-main-nav__link, .c-main-nav__link--home, .c-main-nav__link--donate
+    color: #1f2326
+    float: left
+    border-right: 1px solid #ddd
+    border-bottom: 0
+    height: 54px
+    line-height: 54px
+    padding: 0 15px
+
+.c-main-nav__link:hover, .c-main-nav__link--home:hover, .c-main-nav__link--donate:hover
+  opacity: .65
+
+.c-main-nav__link.is-active
+  color: #EE4D9B
+
+.is-active
+  &.c-main-nav__link--home, &.c-main-nav__link--donate
+    color: #EE4D9B
+
+@media (min-width: 650px)
+  .c-main-nav__link.is-active
+    color: #1f2326
+    background: #eee
+    transition: none
+  .is-active
+    &.c-main-nav__link--home, &.c-main-nav__link--donate
+      color: #1f2326
+      background: #eee
+      transition: none
+
+.c-main-nav__link.is-active:hover
+  opacity: 1
+
+.is-active
+  &.c-main-nav__link--home:hover, &.c-main-nav__link--donate:hover
+    opacity: 1
+
+.c-main-nav__link--home
+  float: left
+  padding: 0 15px 0 0
+  border-bottom: 0
+  &.is-active
+    background: none
+  svg
+    width: 150px
+    height: 54px
+
+.c-main-nav__link--donate
+  background-color: #EE4D9B
+  color: white
