@@ -37,8 +37,8 @@ const TemplateWrapper = ({ children }) => (
       <Header />
       <div className="l-content-container">
         {children()}
+        <Footer />
       </div>
-      <Footer />
     </div>
   </div>
 )

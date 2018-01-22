@@ -14,8 +14,8 @@ const Header = () => (
         <img src={logo} alt="ERH for BOE" title="Home" />
       </Link>
       <nav className="c-navigation">
-        <Link to="/about" exact className="c-main-nav__link">About</Link>
-        <Link to="/issues" exact className="c-main-nav__link">Issues</Link>
+        <Link to="/about" exact activeClassName="is-active" className="c-main-nav__link">About</Link>
+        <Link to="/issues" exact activeClassName="is-active" className="c-main-nav__link">Issues</Link>
         <a href="https://donorbox.org/elena-rosemond-hoerr-for-school-board" className="c-main-nav__link--donate">Donate</a>
       </nav>
       <h2 className="h-mobile-only c-social-links__intro">Stay connected:</h2>
