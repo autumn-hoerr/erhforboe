@@ -23,7 +23,7 @@ const AboutPage = ({ data }) => (
       <div className="l-container--small">
         <h2>A Background Steeped in Education:</h2>
         { events.map( event => {
-          return <Event {...event} />
+          return <Event key={event.id} {...event} />
         })}
       </div>
     </section>
