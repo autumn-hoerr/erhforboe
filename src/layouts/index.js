@@ -50,6 +50,7 @@ class TemplateWrapper extends Component {
         <Helmet
           title="Elena Rosemond-Hoerr for NHC Board of Education"
           meta={[
+            { name: 'theme-color', content: '#ffffff' },
             { name: 'description', content: 'Elena Rosemond-Hoerr for New Hanover County Board of Education' },
             { name: 'keywords', content: 'Elena Rosemond-Hoerr, Board of Education, New Hanover County, school board, elena' },
             { name: 'referrer', content: 'always'},
@@ -69,7 +70,12 @@ class TemplateWrapper extends Component {
             { name: 'twitter:description', content: 'I believe in a robust public school system that provides our students with the resources and opportunities to become leaders in a rapidly evolving global society. I want to support students, parents, and teachers in their shared goal- thriving schools in New Hanover County.' },
           ]}
           link={[
-            { href: 'https://fonts.googleapis.com/css?family=Montserrat', rel: 'stylesheet' }
+            { href: 'https://fonts.googleapis.com/css?family=Montserrat', rel: 'stylesheet' },
+            { href: '/apple-touch-icon.png', rel: "apple-touch-icon", sizes: "180x180" },
+            { href: '/favicon-32x32.png', rel: 'icon', type: 'image/png', sizes: '32x32' },
+            { href: '/favicon-16x16.png', rel: 'icon', type: 'image/png', sizes: '16x16'},
+            { href: '/safari-pinned-tab.svg', rel: 'mask-icon', color: '#5bbab5' },
+
           ]}
         />
         <div className={`l-page-container ${navOpen ? navClass : ''}`} >
